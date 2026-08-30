@@ -27,6 +27,8 @@ Homestead.yaml
 Thumbs.db
 
 # Dev / scratch files
+/err.txt
+/out.txt
 /images galerie/
 /.sixth/
 /check_count.php
