@@ -5,8 +5,8 @@
     "buildCommand": "composer install --no-dev --optimize-autoloader --no-scripts && rm -f bootstrap/cache/packages.php bootstrap/cache/services.php && npm ci && npm run build"
   },
   "deploy": {
-    "startCommand": "mkdir -p storage/framework/sessions storage/framework/views storage/framework/cache && chmod -R 777 storage database && rm -f bootstrap/cache/packages.php bootstrap/cache/services.php && php artisan migrate --force && php bin/seed-once.php && node /assets/scripts/prestart.mjs /app/nginx.template.conf /nginx.conf && (php-fpm -y /assets/php-fpm.conf & nginx -c /nginx.conf)",
-    "healthcheckPath": "/up",
+    "startCommand": "mkdir -p storage/framework/sessions storage/framework/views storage/framework/cache && chmod -R 777 storage bootstrap/cache && rm -f bootstrap/cache/packages.php bootstrap/cache/services.php && [ -z \"$APP_KEY\" ] && php artisan key:generate --force; [ -n \"$DB_HOST\" ] || export DB_HOST=${MYSQLHOST:-127.0.0.1}; [ -n \"$DB_PORT\" ] || export DB_PORT=${MYSQLPORT:-3306}; [ -n \"$DB_DATABASE\" ] || export DB_DATABASE=${MYSQLDATABASE:-ongrail}; [ -n \"$DB_USERNAME\" ] || export DB_USERNAME=${MYSQLUSER:-root}; [ -n \"$DB_PASSWORD\" ] || export DB_PASSWORD=${MYSQLPASSWORD:-}; php artisan migrate --force && php bin/seed-once.php && node /assets/scripts/prestart.mjs /app/nginx.template.conf /nginx.conf && (php-fpm -y /assets/php-fpm.conf & nginx -c /nginx.conf)",
+    "healthcheckPath": "/health",
     "healthcheckTimeout": 300,
     "restartPolicyType": "ON_FAILURE",
     "restartPolicyMaxRetries": 10
