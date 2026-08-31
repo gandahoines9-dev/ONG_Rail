@@ -298,7 +298,7 @@ section.bg-white {
   text-shadow: none;
 }
 .page-header p {
-  @apply text-white/50 text-base lg:text-lg mt-4 max-w-2xl;
+  @apply text-white/90 text-base lg:text-lg mt-4 max-w-2xl mx-auto text-center;
 }
 
 /* ===== Feature Card ===== */

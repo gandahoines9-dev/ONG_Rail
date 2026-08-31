@@ -160,7 +160,7 @@
                     <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent"></div>
                     <span class="absolute top-5 right-6 font-display font-bold text-5xl text-white/20 select-none">{{ $loop->iteration < 10 ? '0' . $loop->iteration : $loop->iteration }}</span>
                     <div class="absolute bottom-0 left-0 right-0 p-5 lg:p-6">
-                        <h3 class="font-display font-bold text-ink-900 text-xl lg:text-2xl leading-tight">{{ $member->name }}</h3>
+                        <h3 class="font-display font-bold text-white text-xl lg:text-2xl leading-tight">{{ $member->name }}</h3>
                         <p class="text-accent-300 text-[0.625rem] font-bold tracking-[0.2em] uppercase mt-1.5">{{ $member->position }}</p>
                     </div>
                 </div>

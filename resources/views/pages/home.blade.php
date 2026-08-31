@@ -305,15 +305,15 @@
                             <span class="inline-block px-3 py-1.5 text-[0.625rem] font-bold tracking-wider uppercase bg-white/20 backdrop-blur-sm text-white/90 rounded-lg w-fit mb-4 shadow-lg">Planifié</span>
                         @endif
                         @if($project->category)
-                        <span class="text-ink-500 text-xs mb-2 block">{{ $project->category->name }}</span>
+                        <span class="text-white/80 text-xs mb-2 block">{{ $project->category->name }}</span>
                         @endif
-                        <h3 class="text-3xl lg:text-4xl font-display font-bold text-ink-900 leading-tight mb-4 group-hover:text-accent-300 transition-colors duration-300">
+                        <h3 class="text-3xl lg:text-4xl font-display font-bold text-white leading-tight mb-4 group-hover:text-accent-300 transition-colors duration-300">
                             <a href="{{ route('projects.index') }}">{{ $project->title }}</a>
                         </h3>
-                        <p class="text-ink-600 leading-relaxed mb-6 line-clamp-2 max-w-xl">
+                        <p class="text-white/90 leading-relaxed mb-6 line-clamp-2 max-w-xl">
                             {{ Str::limit(strip_tags($project->content), 150) }}
                         </p>
-                        <a href="{{ route('projects.index') }}" class="inline-flex items-center gap-2.5 text-sm font-bold tracking-wider text-ink-700 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-6 py-3 hover:bg-white/20 hover:border-white/30 transition-all duration-300 group/link">
+                        <a href="{{ route('projects.index') }}" class="inline-flex items-center gap-2.5 text-sm font-bold tracking-wider text-white bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-6 py-3 hover:bg-white/20 hover:border-white/30 transition-all duration-300 group/link">
                             Découvrir nos projets <i class="fas fa-arrow-right text-xs transition-transform duration-300 group-hover/link:translate-x-1"></i>
                         </a>
                     </div>
